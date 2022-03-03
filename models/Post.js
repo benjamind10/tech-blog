@@ -1,10 +1,10 @@
-// Imports
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// create our Post model
 class Post extends Model {}
 
-// Columns and config
+// create fields/columns for Post model
 Post.init(
   {
     id: {
@@ -18,11 +18,8 @@ Post.init(
       allowNull: false,
     },
     post_description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true,
-      },
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
