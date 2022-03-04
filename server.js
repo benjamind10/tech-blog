@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(
 );
 
 const sess = {
-  secret: 'k[7Y~nJ6',
+  secret: process.env.SECRET_KEY,
   cookie: {},
   resave: false,
   saveUninitialized: true,
