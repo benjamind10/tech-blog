@@ -1,4 +1,11 @@
-<section class="ui inverted grey segment">
+
+
+<div class="ui three column relaxed grid">
+  <div class="column">
+    <img>
+  </div>
+  <div class="column">
+    <section class="ui inverted grey segment">
   <h2 class="center aligned ui inverted header">Create New Post</h2>
 
   <form id="new-post-form" class="ui form">
@@ -27,13 +34,18 @@
     <br>
     <li class="">
       {{> post-info post}}
-      <a id="edit-post" href="/dashboard/edit/{{post.id}}" class="ui inverted header">Edit post</a>
+      <a id="edit-post" href="/dashboard/edit/{{post.id}}" class="ui inverted blue header">Edit post</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
+  </div>
+  <div class="column">
+    <img>
+  </div>
 
+</div>
 
 
 <script src="/javascript/add-post.js"></script>
