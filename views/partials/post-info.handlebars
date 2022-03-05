@@ -1,11 +1,12 @@
-<article class='post'>
+<article class='post ui green segment'>
   <div class='title'>
-    <a href='{{post_title}}' target='_blank'>{{title}}</a>
+    <h3 class='ui green header'>{{title}}</h3>
     <span>{{post_description}}</span>
   </div>
+  <br />
   <div class='meta'>
     by
-    {{user.username}}
+    <span id='user'>{{user.username}}</span>
     on
     {{format_date created_at}}
     |
