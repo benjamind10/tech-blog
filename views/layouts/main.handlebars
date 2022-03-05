@@ -26,21 +26,30 @@
           <div class='right menu'>
             {{#if loggedIn}}
               <a class='ui item' href='/dashboard'>Dashboard</a>
-              <button class='ui inverted green button'>logout</button>
+              <button
+                id='logout'
+                class='ui inverted green button'
+              >logout</button>
             {{else}}
-              <a id='right-menu' href='/login'>login</a>
+              <a
+                id='login'
+                class='ui inverted green button'
+                href='/login'
+              >login</a>
             {{/if}}
           </div>
         </div>
       </header>
       <main>
-        <div id='posts' class='ui inverted segment'>
+        <div id='posts' class='ui inverted grey segment'>
           {{{body}}}
         </div>
 
       </main>
     </div>
 
+    <br />
+    <br />
     <footer class='ui inverted vertical footer segment'>
       Thanks for visiting!
     </footer>
