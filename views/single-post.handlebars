@@ -1,15 +1,21 @@
 {{> post-info post}}
+<br>
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
 
-  <div>
-    <button type="submit">add comment</button>
+<div class='ui equal width grid'>
+  <div class='column'>
   </div>
-</form>
+  <div class='eight wide column'>
+  {{#if loggedIn}}
+    <form id="comment-form" class="ui form">
+      <div>
+        <textarea name="comment-body"></textarea>
+      </div>
+    <br>
+      <div>
+        <button class="ui green button" type="submit">add comment</button>
+      </div>
+    </form>
 {{/if}}
 
 {{> comments post.comments}}
@@ -17,3 +23,7 @@
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
+  </div>
+  <div class='column'>
+  </div>
+</div>
