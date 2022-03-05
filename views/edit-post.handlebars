@@ -1,33 +1,36 @@
 <article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <a class="ui inverted header" href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
     Edit Post
   </h2>
-  <form class="edit-post-form">
+  <form id="edit-post-form" class="ui form">
     <div>
       <input name="post-title" type="text" value="{{post.title}}" />
+      <br>
       <br>
       <textarea name="post-description" type="text">{{post.post_description}}</textarea>
     </div>
     <div>
       by you on {{format_date post.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a id="comments-box" href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="submit" class="ui green button">Save post</button>
+    <button type="button" class="delete-post-btn ui red button">Delete post</button>
   </form>
+  <br>
 </article>
 
-<form class="comment-form">
+<form id="comment-form" class="ui form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
-
+<br>
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit" class="ui green button">add comment</button>
   </div>
 </form>
+<br>
 
 {{> comments post.comments}}
 
