@@ -1,0 +1,39 @@
+<section class="ui inverted grey segment">
+  <h2 class="center aligned ui inverted header">Create New Post</h2>
+
+  <form id="new-post-form" class="ui form">
+    <div>
+      <h5 class="center aligned ui header" for="post-title">Title</h5>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <h5 class="center aligned ui header" for="post-description">Description</h5>
+      <textarea id="post-description" name="post-description"></textarea>
+    </div>
+    <br>
+    <div class="ui three column grid">
+      <div class="column"></div>
+      <button type="submit" class="ui green button column">Create</button>
+      <div class="column"></div>
+    </div>
+  </form>
+</section>
+
+{{#if posts.length}}
+<section>
+  <h2 class="center aligned ui inverted header">Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <br>
+    <li class="">
+      {{> post-info post}}
+      <a id="edit-post" href="/dashboard/edit/{{post.id}}" class="ui inverted header">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+
+
+<script src="/javascript/add-post.js"></script>

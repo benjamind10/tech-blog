@@ -4,9 +4,10 @@
   "description": "A CMS style tech blog built with the MVC paradigm that uses Handlebars.js",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "seeds": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "normalize.css": "^8.0.1"
   }
 }

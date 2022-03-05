@@ -1,0 +1,22 @@
+<article class='ui centered cards'>
+    <div id="cards" class="card">
+        <div class="content">
+        <div class="center aligned ui green header">{{title}}</div>
+        <div class="center aligned meta">Description:</div>
+        <div id="post-descriptions" class="center aligned description">
+           {{post_description}}
+        </div>
+        <br>
+        <div class='center aligned meta'>
+    by
+    <span id='user'>{{user.username}}</span>
+    on
+    {{format_date created_at}}
+    |
+    <a id="comments" href='/post/{{id}}'>{{comments.length}}
+      {{format_plural 'comment' comments.length}}</a>
+  </div>
+    </div>
+
+</article>
+

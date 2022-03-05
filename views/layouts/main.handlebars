@@ -1,0 +1,62 @@
+<html lang='en'>
+
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width, initial-scale=1.0'
+    />
+    <title>Just Tech News</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css'
+    />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <div class='wrapper'>
+      <header>
+        <div class='ui inverted menu'>
+          <a class='active green item' href='/'>
+            Just Tech Blog
+          </a>
+
+          <div class='right menu'>
+            {{#if loggedIn}}
+              <a class='ui item' href='/dashboard'>Dashboard</a>
+              <button
+                id='logout'
+                class='ui inverted green button'
+              >logout</button>
+            {{else}}
+              <a
+                id='login'
+                class='ui inverted green button'
+                href='/login'
+              >login</a>
+            {{/if}}
+          </div>
+        </div>
+      </header>
+      <main>
+        <div id='posts' class='ui inverted grey segment'>
+          {{{body}}}
+        </div>
+
+      </main>
+    </div>
+
+    <br />
+    <br />
+    <footer class='ui inverted vertical footer segment'>
+      Thanks for visiting!
+    </footer>
+
+    {{#if loggedIn}}
+      <script src='/javascript/logout.js'></script>
+    {{/if}}
+  </body>
+
+</html>
