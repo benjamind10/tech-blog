@@ -1,7 +1,6 @@
 {{> post-info post}}
 <br>
 
-
 <div class='ui equal width grid'>
   <div class='column'>
   </div>
@@ -17,8 +16,9 @@
       </div>
     </form>
 {{/if}}
+<br>
 
-{{> comments post.comments}}
+{{> comments post.comments  }}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
