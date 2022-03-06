@@ -44,8 +44,6 @@ router.get('/', (req, res) => {
 
 // get single post
 router.get('/post/:id', (req, res) => {
-  imageList = [];
-  imageList.push({ src: 'images/user_1.png', name: 'image' });
   Post.findOne({
     where: {
       id: req.params.id,
@@ -84,7 +82,6 @@ router.get('/post/:id', (req, res) => {
 
       res.render('single-post', {
         post,
-        imageList,
         loggedIn: req.session.loggedIn,
       });
     })

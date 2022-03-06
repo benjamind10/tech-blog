@@ -13,7 +13,9 @@ const SequelizeStore = require('connect-session-sequelize')(
 
 const sess = {
   secret: 'k[7Y~nJ6',
-  cookie: {},
+  cookie: {
+    expires: 60 * 60 * 1000,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -33,7 +35,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'images')));
+// app.use(express.static(path.join(__dirname, 'images')));
 
 app.use(require('./controllers'));
 
